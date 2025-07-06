@@ -44,5 +44,39 @@ class SinglyLinkedList:
 
 
     def insert_after(self , new_data , index):
-        ###    To Do
-        pass
+        
+        new_node = Node(new_data)
+        temp = self.head
+        
+        for i in range(0,index ):
+            if temp == None:
+                print("list is not longer than index that user given")
+                raise IndexError("invalid index")
+            temp = temp.next
+        if temp.next == None:
+            temp.next = new_node
+            print("added on last index that you selected")
+        else:
+            new_node.next = temp.next
+            temp.next = new_node
+            print("inserted after given index")
+         
+    
+    def delete(self , data):
+        temp = self.head
+        while not temp.next.data == data or temp.next== None :
+            temp = temp.next
+          ## need to fix 
+        if temp==None:
+            print("cannot found data that match in list")
+        else:
+            if temp.next.next == None:
+                temp.next = None
+            else:
+                temp2 = temp.next
+                temp.next = temp2.next
+                temp2 = None
+
+                
+            
+
