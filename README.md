@@ -5,8 +5,8 @@ The goal is to improve **algorithmic thinking** and gain hands-on experience thr
 
 ## 📁 Contents
 
-- [x] Linked List (Singly, Doubly)
-- [x] Stack
+- ✅ Linked List (Singly, Doubly)
+- ✅ Stack
 - [x] Queue
 - [x] Deque
 - [x] Hash Table
