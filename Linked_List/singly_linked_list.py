@@ -1,9 +1,9 @@
-from node import Node
+from .node import Node
 
 class SinglyLinkedList:
 
-    def __init__(self ,head : Node):
-        self.head = head
+    def __init__(self ):
+        self.head = Node("Head")
 
 
     def is_empty(self):
@@ -14,8 +14,15 @@ class SinglyLinkedList:
             print("SinglyLinkedList is not empty")
             return 0          
     
+    def singl_printlist(self):
+        temp = self.head.next
+        while temp is not None:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("None")
 
-    def append(self , new_data):
+
+    def singl_append(self , new_data):
         new_node = Node(new_data)
         temp = self.head
         while temp.next != None:
@@ -28,7 +35,7 @@ class SinglyLinkedList:
     
     
     
-    def prepend(self , new_data):
+    def singl_prepend(self , new_data):
         new_node = Node(new_data)
         temp = self.head
         
@@ -43,7 +50,7 @@ class SinglyLinkedList:
     
 
 
-    def insert_after(self , new_data , index):
+    def singl_insert_after(self , new_data , index):
         
         new_node = Node(new_data)
         temp = self.head
@@ -62,7 +69,7 @@ class SinglyLinkedList:
             print("inserted after given index")
          
     
-    def delete(self , data):
+    def singl_delete(self , data):
         temp = self.head
         while not temp.next.data == data or temp.next== None :
             temp = temp.next
@@ -79,4 +86,22 @@ class SinglyLinkedList:
 
                 
             
+    def singl_delete_at(self , index):
+        temp = self.head
+        for i in range(index):
+            if temp == None :
+                break
+            temp = temp.next
+        temp.next = temp.next.next
+        print("node is deleted")
 
+    def singl_update(self , index , data):
+        temp = self.head
+        for i in range(index):
+            if temp.next == None:
+                break
+            temp = temp.next
+        if temp.next is None:
+            print("out of index")
+        temp.next.data = data
+    
